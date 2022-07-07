@@ -26,7 +26,7 @@ export function isValid(e: React.FormEvent<HTMLInputElement>, max: number) {
 }
 
 export function currencyStr(value: number, options?: TCurrencyOptions) {
-  const { prefix = false } = options || {}
+  const { addPrefix = false, placeholder = '' } = options || {}
 
   const defaultPrice = value.toLocaleString('pt-BR', {
     style: 'currency',
@@ -34,5 +34,5 @@ export function currencyStr(value: number, options?: TCurrencyOptions) {
   })
   const formatValue = defaultPrice.slice(3)
 
-  return value ? (prefix ? `R$ ${formatValue} ` : formatValue) : ''
+  return value ? (addPrefix ? `R$ ${formatValue} ` : formatValue) : placeholder
 }

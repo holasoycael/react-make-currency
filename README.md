@@ -1,3 +1,10 @@
+# React Make Currency
+
+[![npm](https://img.shields.io/npm/v/react-make-currency)](https://www.npmjs.com/package/react-make-currency) [![NPM](https://img.shields.io/npm/l/react-make-currency)](https://www.npmjs.com/package/react-make-currency)
+
+Work with front-end pricing in a simplified way
+
+
 ## Install
 ```sh
 npm install react-make-currency
@@ -54,9 +61,10 @@ In the current version BRL for `floatValue` or `stringValue`
 
 
 ## Announcement
-pt: `Estou preparando uma versão para USD e outras moedas`
 
 en: `I am preparing a version for USD and other currencies`
+
+pt: `Estou preparando uma versão para USD e outras moedas`
 
 es: `Estoy preparando una versión para USD y otras monedas`
 
