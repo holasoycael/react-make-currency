@@ -55,7 +55,9 @@ In the current version BRL for `floatValue` or `stringValue`
 
 ## Announcement
 pt: `Estou preparando uma versão para USD e outras moedas`
+
 en: `I am preparing a version for USD and other currencies`
+
 es: `Estoy preparando una versión para USD y otras monedas`
 
 ## Issues
