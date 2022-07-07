@@ -42,7 +42,7 @@ export default App
 In the current version BRL for `floatValue` or `stringValue`
 
 
-| digitado   	| input value   	| float value 	| string value  	|
+| typed      	| input value   	| float value 	| string value  	|
 |------------	|---------------	|-------------	|---------------	|
 | 1          	| 0,01          	| 0.01        	| 0,01          	|
 | 12         	| 0,12          	| 0.12        	| 0,12          	|
