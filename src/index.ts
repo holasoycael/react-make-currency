@@ -1,3 +1,5 @@
+import type { TCurrencyOptions } from './typings'
+
 export function onValueChange(e: React.FormEvent<HTMLInputElement>) {
   const targetValue = e.currentTarget.value
 
@@ -15,7 +17,7 @@ export function onValueChange(e: React.FormEvent<HTMLInputElement>) {
 
   const floatValue = parseFloat(parseFloatValue)
 
-  return { floatValue, stringValue: toString(floatValue) }
+  return { floatValue, stringValue: currencyStr(floatValue) }
 }
 
 export function isValid(e: React.FormEvent<HTMLInputElement>, max: number) {
@@ -23,14 +25,14 @@ export function isValid(e: React.FormEvent<HTMLInputElement>, max: number) {
   return targetValue.replace(/\D/g, '').length < max
 }
 
-export function toString(value: number) {
+export function currencyStr(value: number, options?: TCurrencyOptions) {
+  const { prefix = false } = options || {}
+
   const defaultPrice = value.toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL'
   })
   const formatValue = defaultPrice.slice(3)
 
-  return value ? formatValue : ''
+  return value ? (prefix ? `R$ ${formatValue} ` : formatValue) : ''
 }
-
-export type TOnValueChange = ReturnType<typeof onValueChange>
