@@ -17,7 +17,7 @@ yarn add react-make-currency
 ## Usage
 ```tsx
 import { useState } from 'react'
-import { toString, onValueChange, isValid } from 'react-make-currency'
+import { currencyStr, onValueChange, isValid } from 'react-make-currency'
 import pt from 'react-make-currency/locale/pt-BR'
 
 // types and interfaces
