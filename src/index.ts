@@ -1,3 +1,7 @@
+// modules
+import en from './locale/en-US'
+
+// types and interfaces
 import type { TCurrencyOptions } from './typings'
 
 export function onValueChange(e: React.FormEvent<HTMLInputElement>) {
@@ -12,7 +16,7 @@ export function onValueChange(e: React.FormEvent<HTMLInputElement>) {
   const parseThousand = thousand.replace(/\D/g, '')
 
   const parseFloatValue = decimal
-    ? `${parseThousand}.${decimal}`
+    ? `${parseThousand}.${String(Number(decimal))}`
     : `0.${parseThousand.length === 1 ? `0${parseThousand}` : parseThousand}`
 
   const floatValue = parseFloat(parseFloatValue)
@@ -25,14 +29,22 @@ export function isValid(e: React.FormEvent<HTMLInputElement>, max: number) {
   return targetValue.replace(/\D/g, '').length < max
 }
 
-export function currencyStr(value: number, options?: TCurrencyOptions) {
-  const { addPrefix = false, placeholder = '' } = options || {}
+const defaultValues = {
+  addPrefix: false,
+  placeholder: '',
+  locale: en
+}
 
-  const defaultPrice = value.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  })
-  const formatValue = defaultPrice.slice(3)
+export function currencyStr(floatValue: number, options?: TCurrencyOptions) {
+  const currentOptions = options || defaultValues
+  const addPrefix = currentOptions.addPrefix || false
+  const placeholder = currentOptions.placeholder
+  const locale = currentOptions.locale || en
 
-  return value ? (addPrefix ? `R$ ${formatValue} ` : formatValue) : placeholder
+  const toLocaleOptions = { style: 'currency', currency: locale.currency }
+  const defaultPrice = floatValue.toLocaleString(locale.lang, toLocaleOptions)
+  const resultPrice = defaultPrice.replace(/[\u00A0]/g, ' ')
+  const formatValue = locale.removePrefix(resultPrice)
+
+  return floatValue ? (addPrefix ? resultPrice : formatValue) : placeholder
 }

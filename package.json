@@ -22,7 +22,7 @@
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
-      "yarn test --findRelatedTests --bail"
+      "yarn test"
     ]
   },
   "devDependencies": {
@@ -46,6 +46,7 @@
     "jest": "^28.1.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.7.1",
+    "react": "^18.2.0",
     "typescript": "^3.7.2"
   }
 }

@@ -1,5 +1,5 @@
 export default {
-  prefix: 'R$',
-  decimalSeparator: ',',
-  groupSeparator: '.'
+  lang: 'pt-BR',
+  currency: 'BRL',
+  removePrefix: (value: string) => value.slice(3)
 }

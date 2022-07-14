@@ -1,5 +1,6 @@
 module.exports = {
   testPathIgnorePatterns: ['/node_modules/'],
   collectCoverage: true,
-  collectCoverageFrom: ['test/**/*.spec.ts(x)?']
+  collectCoverageFrom: ['src/**/*.spec.ts(x)?'],
+  modulePaths: ['<rootDir>/src/']
 }
