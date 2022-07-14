@@ -18,6 +18,7 @@ yarn add react-make-currency
 ```tsx
 import { useState } from 'react'
 import { toString, onValueChange, isValid } from 'react-make-currency'
+import pt from 'react-make-currency/locale/pt-BR'
 
 // types and interfaces
 import type { TOnValueChange } from 'react-make-currency'
@@ -30,11 +31,11 @@ const App = () => {
   return (
     <div>
       <span>
-        {value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+        {currencyStr(value, { addPrefix: true, locale: pt })}
       </span>
       <input
         type="tel"
-        value={toString(useInput)}
+        value={currencyStr(useInput, { locale: pt })}
         onChange={(e) => isValid(e, 13) && handleChange(onValueChange(e))}
         placeholder="0,00"
       />
@@ -62,11 +63,11 @@ In the current version BRL for `floatValue` or `stringValue`
 
 ## Announcement
 
-en: `I am preparing a version for USD and other currencies`
+en: `More coins will be available soon!`
 
-pt: `Estou preparando uma versão para USD e outras moedas`
+pt: `Em breve mais moedas estará disponível!`
 
-es: `Estoy preparando una versión para USD y otras monedas`
+es: `¡Más monedas estarán disponibles pronto!`
 
 ## Issues
 
