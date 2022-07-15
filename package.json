@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Natanael Lourenço",
-  "license": "ISC",
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
