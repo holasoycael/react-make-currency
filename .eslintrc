@@ -16,7 +16,7 @@
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "ignorePatterns": "/node_modules/",
+  "ignorePatterns": ["/node_modules/", "/lib/"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
