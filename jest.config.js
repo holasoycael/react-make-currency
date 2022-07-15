@@ -1,6 +1,6 @@
 module.exports = {
-  testPathIgnorePatterns: ['/node_modules/'],
+  testPathIgnorePatterns: ['/node_modules/', '/lib/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.spec.ts(x)?'],
+  collectCoverageFrom: ['src/**/*.spec.ts'],
   modulePaths: ['<rootDir>/src/']
 }

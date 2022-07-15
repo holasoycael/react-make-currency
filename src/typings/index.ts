@@ -6,9 +6,11 @@ type TLocale = {
   removePrefix: (value: string) => string
 }
 
-export type TOnValueChange = ReturnType<typeof onValueChange>
-export type TCurrencyOptions = {
+type TOnValueChange = ReturnType<typeof onValueChange>
+type TCurrencyOptions = {
   addPrefix?: boolean
   placeholder?: string
   locale?: TLocale
 }
+
+export { TOnValueChange, TCurrencyOptions }
